@@ -1,0 +1,14 @@
+{
+  "name": "javascript_postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "Sas",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.18.2"
+  }
+}
