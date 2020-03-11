@@ -6,9 +6,8 @@
     </head>
     <body>
         <div id="camera">
-
         <div>
-            <video id="player" style="display:inline-block; vertical-align: top;"></video>
+         <video src=""></video>
             <img id="output" style="display: inline-block; vertical-align: top;"><img>
         </div>
         </div>
@@ -16,6 +15,13 @@
             <button id="capture">Capture</button>
             <canvas id="canvas" style="display:none"></canvas>
         </div>
-        <script src="scripts/webcam.js"></script>
+        <script>
+            const constraints = {
+            video:true, audio:false};
+            const video = document.querySelector('video');
+            navigator.mediaDevices.getUserMedia(constraints).
+            then((stream) => {video.srcObject=stream}).catch ((err)=> console.log(err))
+
+        </script>
     </body>
 </html>

@@ -1,20 +1,20 @@
-(function(){
-    navigator.mediaDevices.getUserMedia = (navigator.mediaDevices.getUserMedia || navigator.mediaDevices.webkitGetUserMedia || navigator.mediaDevices.mozGetUserMedia);
-    navigator.getUserMedia(
-        {video:true, audio:false},
+// (function(){
+//     navigator.mediaDevices.getUserMedia = (navigator.mediaDevices.getUserMedia || navigator.mediaDevices.webkitGetUserMedia || navigator.mediaDevices.mozGetUserMedia);
+//     navigator.getUserMedia(
+//         {video:true, audio:false},
         
-        function(stream){
-            var video = document.getElementById('player');
-            video.src = window.webkitURL.createObjectURL(stream);
-            video.play();
-        },
-        function(error){
-            console.log(error)
-        },
+//         function(stream){
+//             var video = document.getElementById('player');
+//             video.src = window.webkitURL.createObjectURL(stream);
+//             video.play();
+//         },
+//         function(error){
+//             console.log(error)
+//         },
 
-        document.getElementById("capture").addEventListener("click", takeSnapshot)
-    );
-})();
+//         document.getElementById("capture").addEventListener("click", takeSnapshot)
+//     );
+// })();
 
 // var getUserMedia = navigator.getUserMedia ||
 // navigator.mozGetUserMedia ||
@@ -78,3 +78,8 @@
 //       console.log(error);
 //     });
 //   }
+const constraints = {
+    video:true};
+const video = document.querySelector('video');
+navigator.mediaDevices.getUserMedia(constraints).
+then((stream) => {video.srcObject=stream})
