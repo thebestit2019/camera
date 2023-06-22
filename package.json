@@ -9,6 +9,6 @@
   "author": "Sas",
   "license": "ISC",
   "dependencies": {
-    "pg": "^7.18.2"
+    "pg": "^8.11.0"
   }
 }
